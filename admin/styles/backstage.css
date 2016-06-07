@@ -1,0 +1,316 @@
+/*头部*/
+.head {
+    height: 60px;
+    background-color: #69F2E3;
+    padding: 0 10px;
+}
+
+.logo {
+    width: 100px;
+    height: 60px;
+    background: url("../images/logo_index.png") left top no-repeat;
+}
+
+.head_text {
+    height: 100%;
+    font: 22px/60px "微软雅黑";
+    color: #000;
+}
+
+/*用户位置*/
+.operation_user {
+    font: 12px/2.5 "微软雅黑";
+    padding: 0 10px;
+    background-color: #FF7DAB;
+}
+
+.link span {
+    font-family: "宋体";
+    font-weight: 500;
+    padding: 0 10px;
+}
+
+.link a {
+    color: black;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    float: left;
+    margin-bottom: -999999px;
+    padding-bottom: 999999px;
+    overflow: hidden;
+}
+
+.menu {
+    width: 200px;
+    float: left;
+    margin-left: -100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    background-color: #55585a;
+    margin-bottom: -999999px;
+    padding-bottom: 999999px;
+    overflow: hidden;
+}
+
+.cont {
+    position: relative;
+    z-index: 3;
+    zoom: 1;
+}
+
+.main .cont {
+    margin-left: 201px;
+}
+
+.title {
+    font: 16px/2.5 "微软雅黑";
+    padding: 0 35px;
+    background-color: #ffff2c;
+}
+
+/*左侧导航*/
+.mList {
+    color: #FFF;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    padding-top: 1em;
+    zoom: 1;
+}
+
+.mList h3 {
+    font: 14px/2 "";
+    padding-left: 1em;
+}
+
+.mList h3 span {
+    display: inline-block;
+    width: 10px;
+    margin-right: 8px;
+}
+
+.mList span{
+    cursor: pointer;
+}
+
+.mList dl {
+    text-indent: 3em;
+}
+
+.mList a {
+    color: #FFF;
+    font: 12px/2 "微软雅黑";
+    display: block;
+}
+
+.icon {
+    padding-left: 18px;
+    background: left center no-repeat;
+}
+
+.icon_i {
+    background-image: url(../images/icon/i.png);
+}
+
+.icon_j {
+    background-image: url(../images/icon/j.png);
+}
+
+.icon_t {
+    background-image: url(../images/icon/t.png);
+}
+
+.icon_n {
+    background-image: url(../images/icon/n.png);
+}
+
+.icon_e {
+    background-image: url(../images/icon/e.png);
+}
+
+/*右侧详细列表*/
+.details_operation {
+    margin-bottom: 20px;
+}
+
+.details {
+    padding: 15px;
+    font-family: "微软雅黑";
+}
+
+.bui_select {
+    background-color: white;
+    height: 30px;
+    float: left;
+}
+
+
+
+.add {
+    width: 92px;
+    height: 30px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    background-color: yellow;
+    border: none;
+    border-radius: 20px;
+}
+
+.select {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    height: 22px;
+    margin: 4px 8px;
+}
+
+.text {
+    float: left;
+    margin-left: 30px;
+    display: inline;
+}
+
+.text span {
+    line-height: 30px;
+    font-size: 14px;
+    float: left;
+    margin-right: 10px;
+}
+
+.search {
+    width: 140px;
+    height: 25px;
+    line-height: 25px \9;
+    background-color: white;
+    padding: 0 8px;
+    border-radius: 20px;
+}
+
+.ml30 {
+    margin-left: 30px;
+    display: inline;
+}
+
+/*表格*/
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.table th {
+    background-color: #E8E8E8;
+}
+
+.table th,
+.table td {
+    border: solid 1px #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.label, .check {
+    vertical-align: middle;
+}
+
+.check {
+    margin-right: 4px;
+}
+
+.btn {
+    padding: 4px 16px;
+    background-color: yellow;
+    border: none;
+    border-radius: 20px;
+    margin: 0 5px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+
+
+
+
+
+/*商品相册*/
+
+#thumbs{
+    display:block;
+}
+
+#selectFileBtn{
+    width:108px;
+    height:28px;
+    float:left;
+    overflow:hidden;
+    text-indent:-9999px;
+    background:url(../images/attach.jpg);
+}
+
+#selectFileBtn:hover{
+    background-position:left -45px;
+}
+
+
+/*附件列表*/
+#attachList{
+    width:510px;
+    padding-top:5px;
+}
+
+/*附件项目元素*/
+
+.attachItem{
+    width:150px;
+    height:20px;
+    float:left;
+    padding:5px;
+    margin-right:10px;
+    margin-bottom:5px;
+    background:#E6ECF5;
+}
+
+.attachItem .left{
+    float:left;
+    display:inline;
+}
+
+.attachItem .right{
+    float:right;
+    display:inline;
+}
+
+.attachItem .right a{
+    display:block;
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    text-indent:-9999px;
+    background:url(../images/delete.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
