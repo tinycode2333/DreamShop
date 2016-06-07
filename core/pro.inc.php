@@ -52,11 +52,8 @@ function addPro($link){
     }
     return $mes;
 }
-/**
- *编辑商品
- * @param int $id
- * @return string
- */
+
+//编辑商品
 function editPro($id, $link){
     $arr=$_POST;
     $path="./uploads";
@@ -139,84 +136,62 @@ function delPro($id, $link){
 }
 
 
-/**
- * 得到商品的所有信息
- * @return array
- */
+//得到商品的所有信息
 function getAllProByAdmin($link){
     $sql="select p.id,p.pName,p.pSn,p.pNum,p.mPrice,p.iPrice,p.pDesc,p.pubTime,p.isShow,p.isHot,c.cName from dream_pro as p join dream_cate c on p.cId=c.id";
     $rows=fetchAll($link,$sql);
     return $rows;
 }
 
-/**
- *根据商品id得到商品图片
- * @param int $id
- * @return array
- */
+//根据商品id得到商品图片
+
 function getAllImgByProId($id,$link){
     $sql="select a.albumPath from dream_album  a where pid={$id}";
     $rows=fetchAll($link,$sql);
     return $rows;
 }
 
-/**
- * 根据id得到商品的详细信息
- * @param int $id
- * @return array
- */
+// 根据id得到商品的详细信息
+
 function getProById($id, $link){
     $sql="select p.id,p.pName,p.pSn,p.pNum,p.mPrice,p.iPrice,p.pDesc,p.pubTime,p.isShow,p.isHot,c.cName,p.cId from dream_pro as p join dream_cate c on p.cId=c.id where p.id={$id}";
     $row=fetchOne($link, $sql);
     return $row;
 }
-/**
- * 检查分类下是否有产品
- * @param int $cid
- * @return array
- */
+//检查分类下是否有产品
+
 function checkProExist($cid, $link){
     $sql="select * from dream_pro where cId={$cid}";
     $rows=fetchAll($link,$sql);
     return $rows;
 }
 
-/**
- * 得到所有商品
- * @return array
- */
+//得到所有商品
+
 function getAllPros($link){
     $sql="select p.id,p.pName,p.pSn,p.pNum,p.mPrice,p.iPrice,p.pDesc,p.pubTime,p.isShow,p.isHot,c.cName,p.cId from dream_pro as p join dream_cate c on p.cId=c.id ";
     $rows=fetchAll($link,$sql);
     return $rows;
 }
 
-/**
- *根据cid得到4条产品
- * @param int $cid
- * @return Array
- */
+//根据cid得到4条产品
+
 function getProsByCid($cid, $link){
     $sql="select p.id,p.pName,p.pSn,p.pNum,p.mPrice,p.iPrice,p.pDesc,p.pubTime,p.isShow,p.isHot,c.cName,p.cId from dream_pro as p join dream_cate c on p.cId=c.id where p.cId={$cid} limit 4";
     $rows=fetchAll($link,$sql);
     return $rows;
 }
 
-/**
- * 得到下4条产品
- * @param int $cid
- * @return array
- */
+//得到下4条产品
+
 function getSmallProsByCid($cid, $link){
     $sql="select p.id,p.pName,p.pSn,p.pNum,p.mPrice,p.iPrice,p.pDesc,p.pubTime,p.isShow,p.isHot,c.cName,p.cId from dream_pro as p join dream_cate c on p.cId=c.id where p.cId={$cid} limit 4,4";
     $rows=fetchAll($link,$sql);
     return $rows;
 }
 
-/**
- *得到商品ID和商品名称
- * @return array
- */
+//得到商品ID和商品名称
+
 function getProInfo($link){
     $sql="select id,pName from dream_pro order by id asc";
     $rows=fetchAll($link,$sql);

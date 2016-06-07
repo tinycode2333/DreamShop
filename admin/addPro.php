@@ -20,13 +20,8 @@ if(!$rows){
     <meta charset="UTF-8">
     <title></title>
     <link href="./styles/global.css"  rel="stylesheet"  type="text/css" media="all" />
-    <script type="text/javascript" charset="utf-8" src="../plugins/kindeditor/kindeditor.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../plugins/kindeditor/lang/zh_CN.js"></script>
     <script type="text/javascript" src="./scripts/jquery-1.6.4.js"></script>
     <script>
-        KindEditor.ready(function(K) {
-            window.editor = K.create('#editor_id');
-        });
         $(document).ready(function(){
             $("#selectFileBtn").click(function(){
                 $fileField = $('<input type="file" name="thumbs[]"/>');

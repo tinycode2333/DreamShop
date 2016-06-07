@@ -30,10 +30,6 @@ $rows = fetchAll($link, $sql);
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="styles/backstage.css">
-    <link rel="stylesheet" href="scripts/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css"/>
-    <script src="scripts/jquery-ui/js/jquery-1.10.2.js"></script>
-    <script src="scripts/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
-    <script src="scripts/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"></script>
 </head>
 
 <body>
@@ -91,9 +87,10 @@ $rows = fetchAll($link, $sql);
         <?php foreach ($rows as $row): ?>
             <tr>
                 <!--这里的id和for里面的c1 需要循环出来-->
-                <td><input type="checkbox" id="c<?php echo $row['id']; ?>" class="check"
-                           value=<?php echo $row['id']; ?>><label for="c1"
-                                                                  class="label"><?php echo $row['id']; ?></label></td>
+                <td>
+                    <input type="checkbox" id="c<?php echo $row['id']; ?>" class="check" value=<?php echo $row['id']; ?>>
+                    <label for="c1" class="label"><?php echo $row['id']; ?></label>
+                </td>
                 <td><?php echo $row['pName']; ?></td>
                 <td><?php echo $row['cName']; ?></td>
                 <td>
@@ -102,68 +99,9 @@ $rows = fetchAll($link, $sql);
                 <td><?php echo date("Y-m-d H:i:s", $row['pubTime']); ?></td>
                 <td><?php echo $row['iPrice']; ?>元</td>
                 <td align="center">
-                    <input type="button" value="详情" class="btn"
-                           onclick="showDetail(<?php echo $row['id']; ?>,'<?php echo $row['pName']; ?>')"><input
-                        type="button" value="修改" class="btn" onclick="editPro(<?php echo $row['id']; ?>)"><input
-                        type="button" value="删除" class="btn" onclick="delPro(<?php echo $row['id']; ?>)">
-
-                    <div id="showDetail<?php echo $row['id']; ?>" style="display:none;">
-                        <table class="table" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td width="20%" align="right">商品名称</td>
-                                <td><?php echo $row['pName']; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">商品类别</td>
-                                <td><?php echo $row['cName']; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">商品货号</td>
-                                <td><?php echo $row['pSn']; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">商品数量</td>
-                                <td><?php echo $row['pNum']; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">商品原价</td>
-                                <td><?php echo $row['mPrice']; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">会员价格</td>
-                                <td><?php echo $row['iPrice']; ?></td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">商品图片</td>
-                                <td>
-                                    <?php
-                                    $proImgs = getAllImgByProId($row['id'], $link);
-                                    foreach ($proImgs as $img):
-                                        ?>
-                                        <img width="100" height="100" src="uploads/<?php echo $img['albumPath'];?>"
-                                             alt=""/> &nbsp;&nbsp;
-                                    <?php endforeach; ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">是否上架</td>
-                                <td>
-                                    <?php echo $row['isShow'] == 1 ? "上架" : "下架"; ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="20%" align="right">是否热卖</td>
-                                <td>
-                                    <?php echo $row['isHot'] == 1 ? "热卖" : "正常"; ?>
-                                </td>
-                            </tr>
-                        </table>
-                        <span style="display:block;width:80%; ">
-                            商品描述<br/>
-                            <?php echo $row['pDesc']; ?>
-                        </span>
-                    </div>
-
+                    <input type="button" value="详情" class="btn" onclick="showDetail(<?php echo $row['id']; ?>)">
+                    <input type="button" value="修改" class="btn" onclick="editPro(<?php echo $row['id']; ?>)">
+                    <input type="button" value="删除" class="btn" onclick="delPro(<?php echo $row['id']; ?>)">
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -176,18 +114,8 @@ $rows = fetchAll($link, $sql);
     </table>
 </div>
 <script type="text/javascript">
-    function showDetail(id, t) {
-        $("#showDetail" + id).dialog({
-            height: "auto",
-            width: "auto",
-            position: {my: "center", at: "center", collision: "fit"},
-            modal: false,//是否模式对话框
-            draggable: true,//是否允许拖拽
-            resizable: true,//是否允许拖动
-            title: "商品名称：" + t,//对话框标题
-            show: "slide",
-            hide: "explode"
-        });
+    function showDetail(id) {
+        window.open("../details.php?id=" + id, "_blank");
     }
     function addPro() {
         window.location = 'addPro.php';
@@ -218,7 +146,6 @@ $rows = fetchAll($link, $sql);
         }
 
     }
-
     function change(val) {
         window.location = "listPro.php?order=" + val;
     }

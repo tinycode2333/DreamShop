@@ -8,7 +8,15 @@
 
 require_once '../include.php';
 //checkLogined();
-$sql="select id,username,email,activeFlag from dream_user";
+@$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
+$sql="select * from dream_user";
+$totalRows=getResultNum($link, $sql);
+$pageSize=2;
+$totalPage=ceil($totalRows/$pageSize);
+if($page<1||$page==null||!is_numeric($page))$page=1;
+if($page>=$totalPage)$page=$totalPage;
+$offset=($page-1)*$pageSize;
+$sql="select id,username,email,activeFlag from dream_user order by id asc limit {$offset},{$pageSize}";
 $rows=fetchAll($link, $sql);
 if(!$rows){
     alertMes("sorry,没有用户,请添加!","addUser.php");
@@ -55,6 +63,11 @@ if(!$rows){
                 <td align="center"><input type="button" value="修改" class="btn" onclick="editUser(<?php echo $row['id'];?>)"><input type="button" value="删除" class="btn"  onclick="delUser(<?php echo $row['id'];?>)"></td>
             </tr>
         <?php endforeach;?>
+        <?php if($totalRows>$pageSize):?>
+            <tr>
+                <td colspan="5"><?php echo showPage($page, $totalPage);?></td>
+            </tr>
+        <?php endif;?>
         </tbody>
     </table>
 </div>
