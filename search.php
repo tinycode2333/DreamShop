@@ -25,7 +25,7 @@ $pros = fetchAll($link, $sql);
 </head>
 <body>
 <header>
-    <a href="#" class="fl"><img id="logo" src="images/logo.png"></a>
+    <a href="index.php" class="fl"><img id="logo" src="images/logo.png"></a>
 
     <h1 class="fl">夢中</h1>
     <?php if(@$_SESSION['loginFlag']):?>
@@ -42,7 +42,7 @@ $pros = fetchAll($link, $sql);
 <div id="search_pro">
     <div>
         <input id="se" onkeydown="return keyNumAll(event);">
-        <input value="提交" type="button" onclick="return keyNumAll(event);">
+        <input value="提交" type="button" onclick="ssubmit()">
     </div>
 </div>
 <div id="content">
@@ -80,5 +80,21 @@ $pros = fetchAll($link, $sql);
         <span class="fr"><a href="#">Back to top</a></span>
     </div>
 </footer>
+<script type="text/javascript">
+    function keyNumAll(evt){
+        evt = (evt) ? evt : ((window.event) ? window.event : ""); //兼容IE和Firefox获得keyBoardEvent对象
+        var key = evt.keyCode?evt.keyCode:evt.which;//兼容IE和Firefox获得keyBoardEvent对象的键值
+        if(key == 13){
+            var val = document.getElementById("se").value;
+            window.location = "search.php?keywords=" + val;
+        }
+    }
+
+    function ssubmit(){
+        var val = document.getElementById("se").value;
+        window.location = "search.php?keywords=" + val;
+
+    }
+</script>
 </body>
 </html>

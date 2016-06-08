@@ -7,7 +7,6 @@
  */
 
 require_once '../include.php';
-//checkLogined();
 $rows=getAllCate($link);
 if(!$rows){
     alertMes("没有相应分类，请先添加分类!!", "addCate.php");
@@ -36,7 +35,7 @@ if(!$rows){
                     $("#attachList").append($attachItem);
                 });
             });
-            $("#attachList>.attachItem").find('a').live('click',function(obj,i){
+            $("#attachList > .attachItem").find('a').live('click',function(obj,i){
                 $(this).parents('.attachItem').prev('input').remove();
                 $(this).parents('.attachItem').remove();
             });

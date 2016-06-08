@@ -26,7 +26,7 @@ if(strtoupper($verify) == strtoupper($verify1)){
         $_SESSION['adminId']=$row['id'];
         alertMes("登陆成功","index.php");
     }else{
-        alertMes("登陆失败，重新登陆","login.php");
+        alertMes("登陆失败，无此用户","login.php");
     }
 }else{
     echo $verify." ".$verify1;

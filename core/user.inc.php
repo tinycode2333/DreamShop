@@ -36,9 +36,7 @@ function login($link){
     $username=mysqli_escape_string($link,$username);
     $password=md5($_POST['password']);
     $sql="select * from dream_user where username='{$username}' and password='{$password}'";
-    //$resNum=getResultNum($sql);
     $row=fetchOne($link, $sql);
-    //echo $resNum;
     if($row){
         $_SESSION['loginFlag']=$row['id'];
         $_SESSION['username']=$row['username'];

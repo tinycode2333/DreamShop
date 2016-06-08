@@ -17,7 +17,7 @@ if(!($cates && is_array($cates))) {
 </head>
 <body>
 <header>
-    <a href="#" class="fl"><img id="logo" src="images/logo.png"></a>
+    <a href="index.php" class="fl"><img id="logo" src="images/logo.png"></a>
 
     <h1 class="fl">夢中</h1>
     <?php if(@$_SESSION['loginFlag']):?>
@@ -34,7 +34,7 @@ if(!($cates && is_array($cates))) {
 <div id="search_pro">
     <div>
         <input id="se" onkeydown="return keyNumAll(event);">
-        <input value="提交" type="button" onclick="return keyNumAll(event);">
+        <input value="提交" type="button" onclick="ssubmit();">
     </div>
 </div>
 <div id="main">
@@ -152,6 +152,11 @@ if(!($cates && is_array($cates))) {
             var val = document.getElementById("se").value;
             window.location = "search.php?keywords=" + val;
         }
+    }
+    function ssubmit(){
+        var val = document.getElementById("se").value;
+        window.location = "search.php?keywords=" + val;
+
     }
 </script>
 </body>

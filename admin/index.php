@@ -1,6 +1,6 @@
 <?PHP
     require_once '../include.php';
-    //checkLogined();
+    checkLogined();
 ?>
 <!DOCTYPE html>
 <html>

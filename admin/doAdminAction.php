@@ -7,7 +7,7 @@
  */
 
 require_once '../include.php';
-//checkLogined();
+checkLogined();
 $act = $_REQUEST['act'];
 @$id = $_REQUEST['id'];
 if($act=="logout"){
