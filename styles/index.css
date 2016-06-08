@@ -40,13 +40,13 @@ header button{
 }
 /*中间宽度*/
 #main{
-    min-width: 1280px;
+    min-width: 1080px;
     background-color: #ff7dab;
     margin: 0;
 }
 
 #content{
-    padding-top: 20px;
+    padding: 10px;
 }
 
 /*banner*/
@@ -171,4 +171,58 @@ header button{
     border: none;
     background-color: #717179;
     color: white;
+}
+#search_pro{
+    padding-top: 30px;
+    background-color: #ff7dab;
+}
+
+#search_pro  div{
+    text-align: center;
+}
+
+#search_pro input:first-child{
+    width: 40%;
+    height: 40px;
+    border: none;
+    color: black;
+    background-color: white;
+}
+
+#search_pro input {
+    margin: 20px 0 20px -6px;
+    width: 8%;
+    height: 40px;
+    border: none;
+    background-color: #ffff2c;
+    color: #55585a;
+}
+
+.divPrice{
+    background: url("../images/price.jpg");
+    position: absolute;
+    top: 305px;
+    right: -10px;
+    text-align: center;
+    font-size: 30px;
+    width: 332px;
+    height: 63px;
+    line-height: 63px;
+}
+
+#buy {
+    margin: 20px auto;
+    width: 200px;
+    height: 60px;
+    background-color: #FFA800;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 30px;
+}
+
+
+#buy:hover {
+    width: 250px;
+    background-color: #ff7dab;
+    color: #b6ffe7;
 }

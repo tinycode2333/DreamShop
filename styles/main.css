@@ -454,7 +454,7 @@
 
 .shopItem_smImg img {
     width: 95px;
-    height: 95px;
+    height: 120px;
 }
 
 .shopItem_text {
@@ -465,11 +465,12 @@
 
 .shopItem_text p {
     color: #FF7300;
+    font-size: 30px;
 }
 
 .shopItem_text h3 {
-    font-family: "Microsoft YaHei", "微软雅黑";
-    font-size: 30px;
+    font-family: "微软雅黑";
+    font-size: 15px;
     font-weight: normal;
     color: #181818;
     line-height: 30px;
@@ -880,8 +881,8 @@
 .userPosition {
     font-size: 0;
     font-family: Verdana;
-    margin-top: 25px;
-    margin-bottom: 15px;
+    margin: 20px auto;
+    width: 900px;
 }
 
 .userPosition em,
@@ -901,6 +902,9 @@
 
 .description_info {
     background-color: #FFF;
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .description {
@@ -912,19 +916,30 @@
 }
 
 .description .rightArea {
-    width: 688px;
-    border-left: #CCC solid 1px;
+    width: 530px;
+    min-height: 360px;
 }
+
+.description .rightArea h1{
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.description .rightArea pre{
+    font-size: 20px;
+}
+
+
 
 /*图片展示*/
 .description_imgs .big {
-    height: 340px;
+    height: 305px;
     text-align: center;
 }
 
 .des_smimg {
     padding-left: 1px;
-    width: 265px;
+    width: 350px;
     margin: 0 auto;
 }
 

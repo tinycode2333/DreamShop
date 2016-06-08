@@ -33,9 +33,6 @@ $rows = fetchAll($link, $sql);
 </head>
 
 <body>
-<div id="showDetail" style="display:none;">
-
-</div>
 <div class="details">
     <div class="details_operation clearfix">
         <div class="bui_select">
@@ -128,12 +125,12 @@ $rows = fetchAll($link, $sql);
             window.location = "doAdminAction.php?act=delPro&id=" + id;
         }
     }
-    function search() {
-        if (event.keyCode == 13 || event.which == 13) {
-            var val = document.getElementById("search").value;
-            window.location = "listPro.php?keywords=" + val;
-        }
-    }
+//    function search() {
+//        if (event.keyCode == 13 || event.which == 13) {
+//            var val = document.getElementById("search").value;
+//            window.location = "listPro.php?keywords=" + val;
+//        }
+//    }
     //兼容火狐&&ie
     function keyNumAll(evt){
 

@@ -1,0 +1,22 @@
+#content{
+    background-color: #ff7dab;
+}
+#search_main{
+    max-width: 900px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#search_main div{
+    float: left;
+    width: 200px;
+    margin: 10px 5px;
+    border: solid 1px gray;
+    background-color: #ffffff;
+}
+
+#search_main img{
+    width: 200px;
+}
+
+#search_main

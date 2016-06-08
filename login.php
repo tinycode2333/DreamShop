@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -47,7 +47,7 @@
                 </div>
             </form>
         </div>
-        <a class="reg_link" href="#"></a>
+        <a class="reg_link" href="reg.php"></a>
     </div>
 </div>
 

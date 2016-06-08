@@ -2,7 +2,7 @@
 require_once 'include.php';
 $cates = getAllcate($link);
 if(!($cates && is_array($cates))) {
-    alert("不好意思，网站维护中!!!");
+    echo("不好意思，网站维护中!!!");
 }
 ?>
 <!DOCTYPE html>
@@ -31,17 +31,23 @@ if(!($cates && is_array($cates))) {
         <button onclick="window.location.href='login.php'" class="fr">&nbsp;&nbsp;&nbsp;登&nbsp;陆&nbsp;&nbsp;&nbsp;</button>
     <?php endif;?>
 </header>
+<div id="search_pro">
+    <div>
+        <input id="se" onkeydown="return keyNumAll(event);">
+        <input value="提交" type="button" onclick="return keyNumAll(event);">
+    </div>
+</div>
 <div id="main">
     <div id="content">
         <div class="banner">
             <div id="list" style="left: -800px;">
-                <img src="images/banner5.jpg" alt="1"/>
-                <img src="images/banner1.jpg" alt="1"/>
-                <img src="images/banner2.jpg" alt="2"/>
-                <img src="images/banner3.jpg" alt="3"/>
-                <img src="images/banner4.jpg" alt="4"/>
-                <img src="images/banner5.jpg" alt="5"/>
-                <img src="images/banner1.jpg" alt="5"/>
+                <a href="details.php?id=29"><img src="images/banner5.jpg" alt="1"/></a>
+                <a href="details.php?id=28"><img src="images/banner1.jpg" alt="1"/></a>
+                <a href="details.php?id=24"><img src="images/banner2.jpg" alt="2"/></a>
+                <a href="details.php?id=30"><img src="images/banner3.jpg" alt="3"/></a>
+                <a href="details.php?id=31"><img src="images/banner4.jpg" alt="4"/></a>
+                <a href="details.php?id=29"><img src="images/banner5.jpg" alt="5"/></a>
+                <a href="details.php?id=28"><img src="images/banner1.jpg" alt="5"/></a>
             </div>
             <div id="buttons">
                 <span index="1" class="on"></span>
@@ -76,7 +82,7 @@ if(!($cates && is_array($cates))) {
                                 ?>
                                 <div class="shop_item">
                                     <div class="shop_img">
-                                        <a href="proDetails.php?id=<?php echo $pro['id'];?>" target="_blank">
+                                        <a href="details.php?id=<?php echo $pro['id'];?>" target="_blank">
                                             <img height="200" width="187" src="images/image_220/<?php echo $proImg['albumPath'];?>" alt="">
                                         </a>
                                     </div>
@@ -98,8 +104,8 @@ if(!($cates && is_array($cates))) {
                                 ?>
                                 <div class="shopItem_sm">
                                     <div class="shopItem_smImg">
-                                        <a href="proDetails.php?id=<?php echo $proSmall['id'];?>" target="_blank">
-                                            <img width="95" height="95" src="images/image_220/<?php echo $proSmallImg['albumPath'];?>" alt="">
+                                        <a href="details.php?id=<?php echo $proSmall['id'];?>" target="_blank">
+                                            <img  src="images/image_220/<?php echo $proSmallImg['albumPath'];?>" alt="">
                                         </a>
                                     </div>
                                     <div class="shopItem_text">
@@ -121,7 +127,6 @@ if(!($cates && is_array($cates))) {
 <footer>
     <div id="contact">
         <span>联系我们</span>
-
         <p>为了更好地获取我们的最新产品咨询，您可以留下您的产品邮箱快速订阅我们的产品咨询<br/>
             也可以通过以下方式关注我们的动态</p>
 
@@ -138,7 +143,16 @@ if(!($cates && is_array($cates))) {
         <span class="fl">@夢中</span>
         <span class="fr"><a href="#">Back to top</a></span>
     </div>
-
 </footer>
+<script type="text/javascript">
+    function keyNumAll(evt){
+        evt = (evt) ? evt : ((window.event) ? window.event : ""); //兼容IE和Firefox获得keyBoardEvent对象
+        var key = evt.keyCode?evt.keyCode:evt.which;//兼容IE和Firefox获得keyBoardEvent对象的键值
+        if(key == 13){
+            var val = document.getElementById("se").value;
+            window.location = "search.php?keywords=" + val;
+        }
+    }
+</script>
 </body>
 </html>
